@@ -1,0 +1,93 @@
+.header{
+	background-color:#C5D3DB;
+	margin-left:15px;
+	margin-top:0px;
+	float:center;
+	width:1250px;
+	height:150px;
+	border: 2px solid #000
+	
+	
+
+}
+.profileLeft
+{
+	margin-left:15px;
+	margin-top:0px;
+	float:left;
+	background-color:#6194E7;
+	
+	border: 2px solid #000;
+	width:250px;
+	height:498px;
+}
+
+	
+}
+.signuphead
+{
+	background-color:#C5D3DB;
+	margin-left:15px;
+	margin-top:0px;
+	float:center;
+	width:900px;
+	height:50px;
+	border: 2px solid #000
+	
+}
+.signupform
+{
+	background-color:#C5D3DB;
+	margin-left:15px;
+	margin-top:0px;
+	float:center;
+	width:900px;
+	height:400px;
+	border: 2px solid #000
+	
+}
+
+.headLines{
+	background-color:#E3143B;
+	margin-left:15px;
+	margin-top:px;
+	float:center;
+	width:1250px;
+	height:32px;
+	border: 2px solid #000
+
+}
+.mainBody{
+	background-color:#2291D1;
+	margin-left:15px;
+	margin-top:0px;
+	float:center;
+	width:1250px;
+	height:600px;
+	border: 2px solid #000
+
+}
+.footer
+{
+background-color:#C5D3DB;
+	margin-left:15px;
+	float:center;
+	width:1250px;
+	height:105px;
+	border: 2px solid #000
+}
+.clr{
+	clear:both;
+}
+
+.profileBody
+{
+	margin-left:0px;
+	margin-top:0px;
+	padding-left:20px;
+	float:left;
+	background-color:#6194E7;
+	border: 2px solid #000;
+	width:975px;
+	height:498px;
+

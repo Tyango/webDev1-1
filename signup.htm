@@ -1,28 +1,98 @@
-<!DOCTYPE html>
+<! DOCTYPE html AUTHOR: TNC "Signup criteria">
 <html>
-	<head>
-		<title></title>
-		<script type="text/javascript">
+	<head><title>Sign up</title><link href="style.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript">
 		function valid(){
+			alert('fn');
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var validUserFormat = /^([A-Za-z](?:\.[A-Za-z]{1})?[A-Za-z0-9@_]{6,20})$/;
+			var validPassword = /^[a-z0-9_-A-Z@]{6,18}$/;
 			var emailVal = document.getElementById('email').value;
 			var usernameVal = document.getElementById('username').value;
 			var passwordVal = document.getElementById('password').value;
 			var c_passwordVal = document.getElementById('c_password').value;
-			if(emailVal === '' || usernameVal === '' || passwordVal === '' || c_passwordVal === ''){
-				alert('empty fields can not be submitted');
-				return false;
+			var emailFlag =0;
+			var usernameFlag =0;
+			var passwordFlag =0;
+			var c_passwordFlag =0;
+			
+			
+			if(emailVal==='' || usernameVal==='' || passwordVal==='' || c_passwordVal==='')
+			{
+			alert('Empty field cannot be submitted.');
+			return true;
+			}
+			
+			
+			if(emailVal.match(mailformat)){
+			emailFlag=1;
+		}
+			
+			
+			
+			/*var firstIndexOfString = usernameVal.charAt(0);
+				if(Character.isDigit(firstIndexOfString))
+				digitFlag =1;*/
+				
+			if(usernameVal.match(validUserFormat)){
+			usernameFlag=1;
+		}
+			
+			
+			if(passwordVal.match(validPassword)){
+			passwordFlag=1;
+		}
+			
+								
+			//<!-- Compares two inputted alphanumeric passwords.>
+			if(passwordVal===c_passwordVal){
+			c_passwordFlag =1;
+		}
+			
+			
+			<!-- If all flags are 1, then this is a clean pass --/>
+			if(emailFlag == 1 && usernameFlag == 1 && passwordFlag ==1 && c_passwordFlag==1){
+				alert('Clean Pass.');
+				return true;
+			}
+			else{
+				if(emailFlag==0){
+				alert('Invalid username email combination. Please try with valid credentials.');
+				
+			}
+				
+				if(usernameFlag==0){
+				alert('Invalid username combination. Please try with starting with a character.');
+				
+			} 
+			
+				if(passwordFlag==0){
+				alert('Password Mismatch');
+				
+			}
+				
 			}
 		}
+	
 		</script>
 	</head>
+	
 	<body>
-		<a href="home.htm">Home</a><br/><a href="login.htm">Login</a><br/><a href="signup.htm">Signup</a>
-		<form method="post" action="" onSubmit = "return valid()">
-			<label>Email</label><input type="text" id="email" /><br/>
-			<label>Username</label><input type="text" id="username" /><br/>
-			<label>Password</label><input type="password" id="password" /><br/>
-			<label>Confirm Password</label><input type="password" id="c_password" /><br/>
-			<input type="submit" value="Signup Now" />
-		</form>
+		<div class = "signuphead">
+			<p> Please Enter following fields to sign up.</p>
+		</div>
+		
+		<div class = "signupForm">
+			<form method="post" action="" onSubmit="return valid()">   
+				<ul>  
+					<li><p> Email:<input type='text' name='email' id = "email"/></p></li>
+					<li><p> Username [Dot not start with a number]:<input type='text' name='username' id = "username"/></p></li>
+					<li><p> password [alphanemeric with minimum of 6 characters]:<input type='password' name='password' id = "password"/></p></li>
+					<li><p> Confirm password:<input type='password' name='c_password' id = "c_password"/></p></li>  
+					<input type="submit" name="submit" value="Submit" /></li>  
+					
+				</ul>  
+			</form>  
+		</div>
 	</body>
 </html>
