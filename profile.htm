@@ -1,6 +1,17 @@
 <!DOCTYPE html AUTHOR: TNC>
 <html>
-	<head> <title>Designers Page</title> <link href="style.css" rel="stylesheet" type="text/css"/></head>
+	<head> <title>Designers Page</title> <link href="style.css" rel="stylesheet" type="text/css"/>
+		<script type = "text/javascript">
+			function create()
+			{
+				//var profilePic = document.getElementById("profilePic").value;
+				alert('');
+				var year = 2;
+				alert('Profile Successfully Created.');
+				return true;
+			}
+		</script>
+	</head>
 	
 	<body>
 		<div class = "header">
@@ -16,7 +27,7 @@
 			<h3>Designers Details</h3>
 			<hr/>
 			<p> Name : Tek Narayan Chalise</p>
-			<input type="image" src="tnc.jpg" width="250" height="385" name="button" class="ta" />
+			<input type="image" src="tnc.jpg" width="200" height="160" name="button" class="ta" />
 			</frame>
 		</div>
 		
@@ -24,49 +35,113 @@
 		
 		
 		<div class ="profileBody">
-			<frame>
-			<label><strong>Sign up</strong></label>
-			<hr/>
-				<label>Gender
-				</label>
-				<hr/>			
-				<input type ="radio" name = "sex" value ="Male"/> Male
+			<form method="post" action="" onSubmit = "return create()">
+			<label><strong>Information</strong></label><hr/>
+			<p><strong>Name</strong></p>
+			<p><label>First<input type="text" id="fname" name="fname"/>
+			<label>Middle<input type="text" id="mname" name="mname"/>
+			<label>Last<input type="text" id="lname" name="lname"/></p>
+			
+			<p><label><strong>Address</strong></label><input type="text" id="address" name="address"/>
+			<label><strong>Institution</strong></label><input type="text" id="institute" name="institute"/>
+			<label><strong>Phone</strong></label><input type="text" id="phone" name="phone"/></p>			
+				<label><strong>Gender</strong>
+				</label><br/>
+			
+				<input type ="radio" name = "sex" value ="Male"/> Male<br/>
 				<input type ="radio" name = "sex" value ="Female"/>Female<br/><br/><br/>
-				<label>Marital Status</label><hr/>
-				<input type ="checkbox" name = "relation" value = "single"/> Single
-				<input type ="checkbox" name = "relation" value = "married"/> Married
-				<input type ="checkbox" name = "relation" value = "relation"/> In a relationship
-				<input type ="checkbox" name = "relation" value = "complicated"/> Complicated
+				<label><strong>Marital Status</strong></label><br/>
+				<input type ="radio" name = "relation" value = "single"/> Single<br/>
+				<input type ="radio" name = "relation" value = "married"/> Married<br/>
+				<input type ="radio" name = "relation" value = "relation"/> In a relationship<br/>
+				<input type ="radio" name = "relation" value = "complicated"/> Complicated<br/>
 				<br/><br/>
-				<p>Date of Birth</p><hr/>
+				<p><strong>Date of Birth</strong></p>
 				<p><label>Year
 				<select>
-					<option>2046</option>
-					</select> Month
+					<option>1980</option>
+					<option>1981</option>
+					<option>1982</option>
+					<option>1983</option>
+					<option>1984</option>
+					<option>1985</option>
+					<option>1986</option>
+					<option>1987</option>
+					<option>1988</option>
+					<option>1989</option>
+					<option>1990</option>
+					<option>1991</option>
+					<option>1992</option>
+					<option>1993</option>
+				</select> 
+				Month
 					
 				<select>
+					<option>Jan</option>
+					<option>Feb</option>
+					<option>Mar</option>
+					<option>Apr</option>
+					<option>May</option>
+					<option>Jun</option>
+					<option>Jul</option>
+					<option>Aug</option>
+					<option>Sept</option>
+					<option>Oct</option>
+					<option>Nov</option>
+					<option>Dec</option>
+
+				</select> 
+				Date
+					
+				<select >
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
 					<option>11</option>
-					</select> Date
-					
-				<select>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
 					<option>29</option>
-					</select>
+					<option>30</option>
+					<option>31</option>
+					<option>32</option>					
+				</select>
 				</label></p>
 				<br/><br/>
-				<label><strong>Additional Information</strong></label>
-				<hr/>
-				
-				<label>Email<input type ="text"/></label><br/>
-				
-				<label>Password<input type ="password"/></label><br/>
-				
-				<label>Confirm Password<input type ="password"/></label><br/>
 				
 				
-				<label>Religious State<input type ="text"/></label><br/>
-				<strong><p> Return to Home. <a href ="home.htm"/> Home Page</a> </p></strong>
+				<label><strong>Additional Information</strong></label><br/>
+				<label>Email:<input type ="text" id = "email"/></label><br/>
+				<label>User Name:<input type ="text" id = "username"/></label><br/>
+				<label>Password:<input type ="password" id = "password"/></label><br/>
+				<label>Confirm Password:<input type ="password" id ="c_password"/></label><br/>
+				<label>Profile Picture:<input <input type ="file" name = "profilePic" submit = "submit" value = "Browse"/> </label><br/>
+				<br/><input type = "submit" value ="Submit"/><br/><br/>
 				
-			</frame>
+				<strong><p style ="text-align:right; text-decoration:underline"><a href ="home.htm"/>Return to Home Page.</a> </p></strong>
+				
+			</form>
 		</div>
 		
 		

@@ -1,12 +1,12 @@
 <! DOCTYPE html AUTHOR: TNC "Signup criteria">
 <html>
 	<head><title>Sign up</title><link href="style.css" rel="stylesheet" type="text/css"/>
-	<script type="text/javascript">
+	<script>
 		function valid(){
-			alert('fn');
-			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			var validUserFormat = /^([A-Za-z](?:\.[A-Za-z]{1})?[A-Za-z0-9@_]{6,20})$/;
-			var validPassword = /^[a-z0-9_-A-Z@]{6,18}$/;
+			//alert('fn');
+			var mailFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,4})$";
+			var validUserFormat ="^[A-Za-z][A-Za-z0-9]{5,}$";
+			var validPassword = "^[A-Za-z0-9]{5,}$"
 			var emailVal = document.getElementById('email').value;
 			var usernameVal = document.getElementById('username').value;
 			var passwordVal = document.getElementById('password').value;
@@ -24,9 +24,9 @@
 			}
 			
 			
-			if(emailVal.match(mailformat)){
+			if(emailVal.match(mailFormat)){
 			emailFlag=1;
-		}
+			}
 			
 			
 			
@@ -36,18 +36,18 @@
 				
 			if(usernameVal.match(validUserFormat)){
 			usernameFlag=1;
-		}
+			}
 			
 			
 			if(passwordVal.match(validPassword)){
 			passwordFlag=1;
-		}
+			}
 			
 								
 			//<!-- Compares two inputted alphanumeric passwords.>
 			if(passwordVal===c_passwordVal){
 			c_passwordFlag =1;
-		}
+			}
 			
 			
 			<!-- If all flags are 1, then this is a clean pass --/>
@@ -59,18 +59,18 @@
 				if(emailFlag==0){
 				alert('Invalid username email combination. Please try with valid credentials.');
 				
-			}
+				}
 				
 				if(usernameFlag==0){
 				alert('Invalid username combination. Please try with starting with a character.');
 				
-			} 
+				} 
 			
 				if(passwordFlag==0){
 				alert('Password Mismatch');
 				
-			}
-				
+				}
+				return false;
 			}
 		}
 	
@@ -89,7 +89,8 @@
 					<li><p> Username [Dot not start with a number]:<input type='text' name='username' id = "username"/></p></li>
 					<li><p> password [alphanemeric with minimum of 6 characters]:<input type='password' name='password' id = "password"/></p></li>
 					<li><p> Confirm password:<input type='password' name='c_password' id = "c_password"/></p></li>  
-					<input type="submit" name="submit" value="Submit" /></li>  
+					<input type="submit" name="submit" value="submit" /></li> 
+					 
 					
 				</ul>  
 			</form>  
